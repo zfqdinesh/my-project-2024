@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Data Summary</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f9f9f9;
+        }
+        h1 {
+            color: #333;
+        }
+        h2 {
+            color: #555;
+        }
+        pre {
+            background: #e9ecef;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Sales Data Summary</h1>
+    <h2>Summary:</h2>
+    <pre>
+    Total Sales: {{ summary['Total Sales'] }}
+    Total Quantity Sold: {{ summary['Total Quantity Sold'] }}
+    Average Price per Product: {{ summary['Average Price per Product'] }}
+    </pre>
+    <a href="/">Upload another file</a>
+</body>
+</html>

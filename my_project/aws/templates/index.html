@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AWS Operations</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+        }
+        .icon-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .icon {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            flex-direction: column;
+        }
+        .icon:hover {
+            transform: scale(1.05);
+        }
+        .icon i {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        .icon p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>AWS Operations</h1>
+
+    <div class="icon-container">
+        <div class="icon-container">
+            <a href="http://localhost:5009" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <i class="fas fa-server"></i>
+                <span>launch ec2 instance</span>
+            </a>
+            <a href="http://localhost:5001" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <i class="fas fa-folder-plus"></i>
+                <span>create s3 bucket</span>
+            </a>
+            <a href="http://localhost:5002" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <i class="fas fa-cloud-upload-alt"></i>
+                <span>upload file to bucket</span>
+            </a>
+            
+            <a href="http://localhost:5003" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <i class="fas fa-cogs"></i>
+                <span> start transcribtion</span>
+            </a>
+            
+            <a href="http://localhost:5006" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <i class="fas fa-file-audio"></i>
+                <span>fetch trandcribed text</span>
+            </a>
+            <a href="http://localhost:5007" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <i class="fas fa-trash-alt"></i>
+                <span>clear all services</span>
+            </a>
+        </div>
+
+
+    </div>
+
+</body>
+</html>

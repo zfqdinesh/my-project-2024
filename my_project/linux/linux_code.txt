@@ -1,0 +1,311 @@
+import os
+import pyttsx6
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+import pywhatkit
+import requests
+import subprocess
+from instagrapi import Client
+import psutil
+import googlesearch
+import shutil
+# import wine
+
+# 1. Send WhatsApp Message
+def send_whatsapp_message():
+    number=input("enter number whom you want to msg")
+    message=input("type msg")
+    pywhatkit.sendwhatmsg_instantly(number, message)
+    print("done")
+
+
+# 2. Output of a Command Spoken from the Speaker
+def speak_command_output():
+    command=input("type sometyng")
+    subprocess.run(['espeak-ng', command])
+
+# 3. Send Email
+def send_email():
+    subject=input("enter sub")
+    to_email=input("enter mail id of to")
+    body=input("enter body of mail")
+    from_email = os.getenv('MY_email')
+    password = os.getenv('MY_email_passwd')
+    msg = MIMEMultipart()
+    msg['From'] = from_email
+    msg['To'] = to_email
+    msg['Subject'] = subject
+    msg.attach(MIMEText(body, 'plain'))
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.starttls()
+    server.login(from_email, password)
+    text = msg.as_string()
+    server.sendmail(from_email, to_email, text)
+    server.quit()
+    print("done")
+
+# 4. Send SMS
+def send_sms():
+    to_number=input("+91- enter nu.in this form")
+    message=input("type msg")
+    from twilio.rest import Client
+    account_sid = os.getenv('account_sid')
+    auth_token = os.getenv('auth_token')
+    twilio_nu= os.getevn('your_twilio_number')
+    client = Client(account_sid, auth_token)
+    client.messages.create(body=message, from_=twilio_nu, to=to_number)
+    print("done")
+
+
+# 6. Post to Social Media (simplelified example)
+def post_to_social_media():
+    username =  os.getenv('instagram_username')
+    password = os.getenv('instagram_passwd')
+    client = Client()
+    client.login(username, password)
+    photo_path = input("/path/to/photo")
+    caption = input("caption")
+    client.photo_upload(photo_path, caption)
+    print("done")
+
+
+# 7. Change File and Folder Colors
+def change_file_folder_color():
+    os.system('dircolors --print-database > ~/.dircolors')
+
+# 8. Reading the Entire RAM
+def read_ram():
+    ram_info = psutil.virtual_memory()
+    print(f'Total RAM: {ram_info.total}, Available RAM: {ram_info.available}')
+
+# 9. Change GNOME Terminal Look
+def change_gnome_terminal_look():
+
+    def hacker_theme():
+        os.system("echo -e '\033[0;32m'")  # Green text
+       
+        print("Terminal is now in 'Hacker' mode.")
+
+    def dangerous_theme():
+        os.system("echo -e '\033[0;31m'")  # Red text
+      
+        print("Terminal is now in 'Dangerous' mode.")
+
+    def blue_ocean_theme():
+        os.system("echo -e '\033[0;34m'")  # Blue text
+       
+        print("Terminal is now in 'Blue Ocean' mode.")
+
+    def cyberpunk_theme():
+        os.system("echo -e '\033[0;35m\033[42m'")  # Magenta text on green background
+    
+        print("Terminal is now in 'Cyberpunk' mode.")
+
+    def classic_white_theme():
+        os.system("echo -e '\033[1;37m'")  # White text
+     
+        print("Terminal is now in 'Classic White' mode.")
+
+    def yellow_warning_theme():
+        os.system("echo -e '\033[0;33m'")  # Yellow text
+      
+        print("Terminal is now in 'Yellow Warning' mode.")
+    
+    def twilight_theme():
+        os.system("echo -e '\033[0;35m'")  # Purple text
+      
+        print("Terminal is now in 'Twilight' mode.")
+    
+    def ocean_theme():
+        os.system("echo -e '\033[0;36m'")  # Cyan text
+       
+        print("Terminal is now in 'Ocean' mode.")
+    
+    def vintage_theme():
+        os.system("echo -e '\033[0;37m\033[40m'")  # White text on black background
+        
+        print("Terminal is now in 'Vintage' mode.")
+    
+    def fire_theme():
+        os.system("echo -e '\033[1;31m'")  # Bright red text
+    
+        print("Terminal is now in 'Fire' mode.")
+    
+    def neon_green_theme():
+        os.system("echo -e '\033[0;32;42m'")  # Green text on bright green background
+     
+        print("Terminal is now in 'Neon Green' mode.")
+
+    def pink_flame_theme():
+        os.system("echo -e '\033[1;35m'")  # Bright magenta text
+      
+        print("Terminal is now in 'Pink Flame' mode.")
+
+    def dark_theme():
+        os.system("echo -e '\033[1;30m'")  # Gray text
+       
+        print("Terminal is now in 'Dark' mode.")
+    
+    def bright_theme():
+        os.system("echo -e '\033[1;37;44m'")  # White text on blue background
+       
+        print("Terminal is now in 'Bright' mode.")
+    
+    def display_themes():
+        print("Available themes:")
+        print("1. Hacker")
+        print("2. Dangerous")
+        print("3. Blue Ocean")
+        print("4. Cyberpunk")
+        print("5. Classic White")
+        print("6. Yellow Warning")
+        print("7. Twilight")
+        print("8. Ocean")
+        print("9. Vintage")
+        print("10. Fire")
+        print("11. Neon Green")
+        print("12. Pink Flame")
+        print("13. Dark")
+        print("14. Bright")
+        print("enter any anoter key to leave.")
+    
+    display_themes()
+    
+    while True:
+        command = input("enter your choise: ")
+        if command == '1':
+            hacker_theme()
+        elif command == '2':
+            dangerous_theme()
+        elif command == '3':
+            blue_ocean_theme()
+        elif command == '4':
+            cyberpunk_theme()
+        elif command == '5':
+            classic_white_theme()
+        elif command == '6':
+            yellow_warning_theme()
+        elif command == '7':
+            twilight_theme()
+        elif command == '8':
+            ocean_theme()
+        elif command == '9':
+            vintage_theme()
+        elif command == '10':
+            fire_theme()
+        elif command == '11':
+            neon_green_theme()
+        elif command == '12':
+            pink_flame_theme()
+        elif command == '13':
+            dark_theme()
+        elif command == '14':
+            bright_theme()
+        else: 
+            break                                                         
+        
+# 10. Create User and Set Password
+def create_user():
+    username=input("enter user name")
+    password=input("set a passwd")
+    os.system(f'sudo useradd {username}')
+    os.system(f'echo "{username}:{password}" | sudo chpasswd')
+    print("done")
+
+# 11. Google Search from Terminal
+def google_search():
+    query=input("search on google")
+    results = googlesearch.search(query, num_results=5)
+    for result in results:
+        print(result)
+
+# 13. Sync Two Folders
+def sync_folders():
+    src=input("'/path/to/source'")
+    dest=input("/path/to/destination")
+    shutil.copytree(src, dest, dirs_exist_ok=True)
+    print("done")
+
+# text to ascci value
+def assci_conversion():
+    
+    def text_to_binary(text):
+        return ' '.join(format(ord(c), '08b') for c in text)
+
+    def binary_to_text(binary_str):
+        return ''.join(chr(int(b, 2)) for b in binary_str.split() if b)
+
+    while True:
+        choice = input("1: Text to Binary, 2: Binary to Text, 3: Exit: ")
+        if choice == '1':
+            print(text_to_binary(input("Text: ")))
+        elif choice == '2':
+            print(binary_to_text(input("Binary: ")))
+        elif choice == '3':
+            break
+
+def main():
+    while True:
+        print(" available choices ::--")
+        print("1. send whatsapp msg ")
+        print("2. speak command ")
+        print("3. send email ")
+        print("4. send sms ")
+        print("6. post on instagram ")
+        print("7. change file / folder collor ")
+        print("8. read ram ")
+        print("9. change terminal look ")
+        print("10. creat user  ")
+        print("11. google search ")
+        print("13. sync folders ")
+        print("14. ascci convention ")
+        print(" enter your choice  :   ")
+
+        choice = input("")
+        if choice=='1':
+            send_whatsapp_message()
+
+        elif choice=='2':
+            speak_command_output()
+
+        elif choice=='3':
+            send_email()
+
+        elif choice=='4':
+            send_sms()
+
+
+        elif choice=='6':
+            post_to_social_media()
+
+        elif choice=='7':
+            change_file_folder_color()
+
+        elif choice=='8':
+            read_ram()
+
+        elif choice=='9':
+            change_gnome_terminal_look()
+
+        elif choice=='10':
+            create_user()
+
+        elif choice=='11':
+            google_search()
+
+
+        elif choice=='13':
+            sync_folders()
+
+        elif choice=='14':
+            assci_conversion()
+
+        else:
+            break
+            
+        
+            
+if __name__ == "__main__":
+    main()
+    

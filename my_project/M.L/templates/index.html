@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M_L. project</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        .icon {
+            font-size: 50px;
+            color: #007bff;
+            margin-bottom: 15px;
+        }
+        .icon-container {
+            margin: 20px;
+            padding: 20px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s;
+        }
+        .icon-container:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>M_L. project</h1>
+
+    <div class="icon-container">
+	<a href="http://localhost:5001" class="icon">  
+        <i class="fas fa-car icon"></i>
+        <h2>Car Prediction</h2>
+    </div>
+
+    <div class="icon-container">
+	<a href="http://localhost:5002" class="icon">  
+        <i class="fas fa-crop icon"></i>
+        <h2>Crop Face</h2>
+    </div>
+
+    <div class="icon-container">
+	<a href="http://localhost:5003" class="icon">  
+        <i class="fas fa-database icon"></i>
+        <h2>Data Processing</h2>
+    </div>
+</div>
+
+</body>
+</html>

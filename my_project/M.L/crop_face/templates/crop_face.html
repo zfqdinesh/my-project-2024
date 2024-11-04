@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webcam Capture and Image Filters</title>
+    <style>
+        #video {
+            border: 1px solid black;
+        }
+        #capturedImage {
+            display: none;
+            margin-top: 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h1>Capture an Image from Webcam and Apply Filters</h1>
+    <video id="video" width="640" height="480" autoplay></video>
+    <button id="capture">Capture</button>
+    <canvas id="canvas" width="640" height="480" style="display:none;"></canvas>
+    <img id="capturedImage" />
+
+    <label for="filter">Choose a filter:</label>
+    <select id="filter">
+        <option value="none">None</option>
+        <option value="gray">Grayscale</option>
+        <option value="blur">Blur</option>
+        <option value="edges">Edges</option>
+    </select>
+
+    <form id="uploadForm" action="/upload" method="POST" enctype="multipart/form-data">
+        <input type="hidden" id="imageData" name="imageData">
+        <input type="hidden" id="filterType" name="filter">
+        <button type="submit">Upload Image for Filtering</button>
+    </form>
+
+    <script>
+        // Access the webcam
+        var video = document.getElementById('video');
+        if (navigator.mediaDevices.getUserMedia) {
+            navigator.mediaDevices.getUserMedia({ video: true })
+                .then(function (stream) {
+                    video.srcObject = stream;
+                })
+                .catch(function (error) {
+                    console.log("Something went wrong!");
+                });
+        }
+
+        // Capture image from the webcam
+        var captureButton = document.getElementById('capture');
+        captureButton.addEventListener('click', function () {
+            var canvas = document.getElementById('canvas');
+            var context = canvas.getContext('2d');
+            context.drawImage(video, 0, 0, 640, 480);
+
+            // Convert canvas to image and display it
+            var img = document.getElementById('capturedImage');
+            img.src = canvas.toDataURL('image/jpeg');
+            img.style.display = 'block';
+
+            // Set the image data for uploading
+            document.getElementById('imageData').value = canvas.toDataURL('image/jpeg');
+
+            // Get the selected filter and set it in a hidden input field
+            var selectedFilter = document.getElementById('filter').value;
+            document.getElementById('filterType').value = selectedFilter;
+        });
+    </script>
+</body>
+</html>

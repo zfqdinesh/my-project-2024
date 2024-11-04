@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utility Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>my python projects</h1>
+        <div class="icon-container">
+            <a href="http://localhost:5001" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <img src="https://img.icons8.com/ios-filled/100/000000/email.png" alt="Email">
+                <span>Email</span>
+            </a>
+            <a href="http://localhost:5002" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <img src="https://img.icons8.com/ios-filled/100/000000/sms.png" alt="Message">
+                <span>Message</span>
+            </a>
+            <a href="http://localhost:5003" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <img src="https://img.icons8.com/ios-filled/100/000000/google-logo.png" alt="Google Search">
+                <span>Google Search</span>
+            </a>
+            <a href="http://localhost:5004" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <img src="https://img.icons8.com/ios-filled/100/000000/text-to-speech.png" alt="Text to Speech">
+                <span>Text to Speech</span>
+            </a>
+            <a href="http://localhost:5005" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <img src="https://img.icons8.com/ios-filled/100/000000/volume.png" alt="Volume Control">
+                <span>Volume Control</span>
+            </a>
+            <a href="http://localhost:5006" class="icon">  <!-- Link to the first API (Send SMS) -->
+                <img src="https://img.icons8.com/ios-filled/100/000000/location.png" alt="location">
+                <span>location</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.icon {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 15px;
+    padding: 20px;
+    width: 120px;
+    text-decoration: none;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.icon:hover {
+    transform: scale(1.05);
+}
+
+.icon img {
+    width: 50px;
+    height: 50px;
+}
+
+.icon span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+</style>

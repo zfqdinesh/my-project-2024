@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: #282c34;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        header nav ul li {
+            margin: 0 20px;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        header nav ul li a:hover {
+            color: #61dafb;
+        }
+
+        /* Home Section */
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #282c34;
+            color: #fff;
+        }
+
+        #home h1 {
+            font-size: 3rem;
+        }
+
+        #home p {
+            margin-top: 20px;
+            font-size: 1.2rem;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 50px;
+            background-color: #fff;
+        }
+
+        #projects h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            color: #282c34;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            color: #282c34;
+        }
+
+        .project-card p {
+            margin: 10px 0;
+            font-size: 1rem;
+        }
+
+        .project-card strong {
+            color: #61dafb;
+        }
+
+        /* Skills Section */
+        #skills {
+            background-color: #61dafb;
+            padding: 50px;
+            color: #fff;
+        }
+
+        #skills h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        .skills-list {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .skills-list li {
+            list-style: none;
+            font-size: 1.2rem;
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #282c34;
+            border-radius: 5px;
+            color: #fff;
+        }
+
+        /* About Section */
+        #about {
+            padding: 50px;
+            background-color: #f4f4f9;
+            text-align: center;
+        }
+
+        #about h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #282c34;
+        }
+
+        #about p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 50px;
+            background-color: #282c34;
+            color: #fff;
+            text-align: center;
+        }
+
+        #contact form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact form input, #contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #contact form button {
+            padding: 10px 20px;
+            background-color: #61dafb;
+            border: none;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #contact form button:hover {
+            background-color: #21a1f1;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #282c34;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #61dafb;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header nav ul {
+                flex-direction: column;
+            }
+
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home">
+        <h1>Welcome, I'm Dinesh Ajmera</h1>
+        <p>Tech Enthusiast | Full-Stack Developer | Machine Learning Engineer</p>
+        <p>Mentored by Vimal Daga Sir</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="projects-container">
+            <A HREF="index.html">click here for see my all projects</A>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul class="skills-list">
+            <li>AWS</li>
+            <li>Docker & Kubernetes</li>
+            <li>Python</li>
+            <li>Linux</li>
+            <li>Machine Learning</li>
+            <!-- Add more skills -->
+        </ul>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Passionate about solving real-world problems with technology. With hands-on experience in cloud computing, machine learning, and full-stack development, I enjoy building solutions that make an impact. Mentored by Vimal Daga sir, I have worked on diverse projects ranging from AWS automation to Docker containerization.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Connect with me on <a href="https://linkedin.com/in/your-profile">LinkedIn</a> | <a href="https://github.com/your-profile">GitHub</a></p>
+    </footer>
+</body>
+</html>
